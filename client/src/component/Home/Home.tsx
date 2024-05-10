@@ -6,8 +6,8 @@ export const Home = () => {
     <>
       <Navbar />
       <center>
-        <h1>ยินดีต้อนรับ</h1>
-        dflskdksdk
+        <br />
+        <h1 className="welcome">ยินดีต้อนรับ</h1>
       </center>
     </>
   );

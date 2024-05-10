@@ -1,8 +1,8 @@
 import './login.css'
 import axios from 'axios'
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -21,7 +21,7 @@ const LoginForm = () => {
         method: "POST",
         data: formData
       }).then((response) => {
-        // const response = await axios.post(, { email, password })
+        // const response =  axios.post(, { email, password })
 
         if (response.data.status)
         {
@@ -29,16 +29,7 @@ const LoginForm = () => {
           const token = response.data.token;
           localStorage.setItem('token', token)
 
-          return Swal.fire({
-            title: 'เข้าสู่ระบบเสร็จสิ้น!',
-            text: 'กดตกลงเพื่อเข้าสู่ระบบ',
-            icon: 'success',
-            confirmButtonText: 'ตกลง'
-          }).then(function(){
-            navigate("/Home");
-          })
-          
-          
+          navigate("/Home");
         }
         else
         {
@@ -76,7 +67,7 @@ const LoginForm = () => {
                 htmlFor="email"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
-                อีเมลล์
+                <i className="fa-regular fa-envelope"></i> อีเมลล์
               </label>
               <div className="mt-2">
                 <input
@@ -95,7 +86,7 @@ const LoginForm = () => {
                   htmlFor="password"
                   className="block text-sm font-medium leading-6 text-gray-900"
                 >
-                  รหัสผ่าน
+                  <i className="fa-solid fa-lock"></i> รหัสผ่าน
                 </label>
               </div>
               <div className="mt-2">
@@ -115,6 +106,7 @@ const LoginForm = () => {
                 className="btn btn-success btn-block"
               >
                 เข้าสู่ระบบ
+              
               </button>
             </div>
           </div>

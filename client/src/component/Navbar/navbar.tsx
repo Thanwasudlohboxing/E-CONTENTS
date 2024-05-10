@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./navbar.css";
 
 function Navbar() {
   return (
@@ -7,20 +8,14 @@ function Navbar() {
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
+            <i className="fa-solid fa-bars fa-lg">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
                   d="M4 6h16M4 12h8m-8 6h16"
                 />
-              </svg>
+                </i>
             </div>
             <ul
               tabIndex={0}
@@ -34,20 +29,28 @@ function Navbar() {
               </li>
             </ul>
           </div>
-          <Link to="/Home" className="btn btn-ghost text-lg">E-CONTENT</Link>
+          <Link to="/Home" className="btn btn-ghost text-lg">
+            E-CONTENT
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link to="/Home">หน้าแรก</Link>
+              <Link to="/Home">
+                <i className="fa-solid fa-house"></i>หน้าแรก
+              </Link>
             </li>
             <li>
-              <Link to="/Datatable">ฐานข้อมูล</Link>
+              <Link to="/Datatable">
+                <i className="fa-solid fa-database"></i>ฐานข้อมูล
+              </Link>
             </li>
           </ul>
         </div>
         <div className="navbar-end">
-          <Link className="btn btn-sm btn-error" to="/">ออกจากระบบ</Link>
+          <Link className="btn btn-sm btn-error" to="/">
+            <i className="fa-solid fa-right-from-bracket"></i>ออกจากระบบ
+          </Link>
         </div>
       </div>
     </>

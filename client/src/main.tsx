@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 // Component
 import LoginForm from './component/login/login.tsx'
 import { Home } from './component/Home/Home.tsx'
+import { DataTable } from './component/DataTable/Datatable.tsx'
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "/Home",
     element: <Home />
+  },
+  {
+    path: "/Datatable",
+    element: <DataTable />
   }
 ])
 
