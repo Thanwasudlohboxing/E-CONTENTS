@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom';
 
+
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -63,41 +64,18 @@ const LoginForm = () => {
 
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium leading-6 text-gray-900"
-              >
-                <i className="fa-regular fa-envelope"></i> อีเมลล์
+            <label className="input input-bordered flex items-center gap2">
+              <i className="fa-solid fa-envelope">&nbsp;</i> อีเมลล์ &nbsp;
+              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
               </label>
-              <div className="mt-2">
-                <input
-                  type="text"
-                  placeholder="Email"
-                  className="input input-bordered w-full"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-            </div>
-            <br />
+            </div>            
+            <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
             <div>
-              <div className="flex items-center justify-between">
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-gray-900"
-                >
-                  <i className="fa-solid fa-lock"></i> รหัสผ่าน
-                </label>
-              </div>
-              <div className="mt-2">
-                <input
-                  type="password"
-                  placeholder="Password"
-                  className="input input-bordered w-full"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
+            <label className="input input-bordered flex items-center gap2">
+            <i className="fa-solid fa-key">&nbsp;</i> รหัสผ่าน  &nbsp;
+              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+              </label>
+            </div>
             </div>
             <br />
             <div>
@@ -121,5 +99,4 @@ const LoginForm = () => {
 export default LoginForm
 
   
-
 

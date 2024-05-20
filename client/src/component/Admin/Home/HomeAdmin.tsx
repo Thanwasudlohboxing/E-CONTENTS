@@ -1,7 +1,7 @@
-import Navbar from "../Navbar/navbar";
+import Navbar from "../Navbar/NavAdmin";
 import "./Home.css"
 
-export const Home = () => {
+export const HomeAdmin = () => {
   return (
     <>
       <Navbar />

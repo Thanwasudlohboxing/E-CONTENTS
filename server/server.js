@@ -36,9 +36,34 @@ const initMySQL = async () => {
     host: "localhost",
     user: "root",
     password: "",
-    database: "e-content",
+    port:"8000",
+    database: "econtent",
   });
 };
+
+// var option = {
+//   host: 'localhost',
+//   port: 8000,
+//   path: 'http://localhost:5173/',
+//   method: 'post',
+//   headers: {
+//     Host : 'http://localhost:5173'
+//   }
+// }
+// request(optionm, function (err, response, body) {
+//   if(err){
+//     console.log(err)
+//   }else{
+//     console.log(body)
+//   }
+// })
+
+function authenticationToken(req, res, next){
+  const token = req.headers.authorization?.split('')[1]
+  if(!token) return res.sendStatus(403)
+    req.user = user
+  next()
+}
 
 
 app.post("/api/register", async (req, res) => {
@@ -166,6 +191,7 @@ app.get('/api/show', (req, res) => {
     if(err){
       console.error(err)
       res.status(500).send('ERROR')
+      
       return;
     }
     res.json(results)

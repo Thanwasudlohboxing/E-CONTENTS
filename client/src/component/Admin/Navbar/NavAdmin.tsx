@@ -29,14 +29,14 @@ function Navbar() {
               </li>
             </ul>
           </div>
-          <Link to="/Home" className="btn btn-ghost text-lg">
+          <Link to="/HomeAdmin" className="btn btn-ghost text-lg">
             E-CONTENT
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link to="/Home">
+              <Link to="/HomeAdmin">
                 <i className="fa-solid fa-house"></i>หน้าแรก
               </Link>
             </li>

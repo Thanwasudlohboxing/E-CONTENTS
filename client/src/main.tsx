@@ -2,10 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
-// Component
 import LoginForm from './component/login/login.tsx'
-import { Home } from './component/Home/Home.tsx'
-import { DataTable } from './component/DataTable/Datatable.tsx'
+// Component Admin
+import { HomeAdmin } from './component/Admin/Home/HomeAdmin.tsx'
+import { DataTable } from './component/Admin/DataTable/Datatable.tsx'
+// Component User
+import { HomePageUser } from './component/User/HomeUser.tsx'
+import { FormUser } from './component/User/FormUser.tsx'
 
 const router = createBrowserRouter([
   {
@@ -13,12 +16,20 @@ const router = createBrowserRouter([
     element: <LoginForm />
   },
   {
-    path: "/Home",
-    element: <Home />
+    path: "/HomeAdmin",
+    element: <HomeAdmin />
   },
   {
     path: "/Datatable",
     element: <DataTable />
+  },
+  {
+    path: "/HomeUser",
+    element: <HomePageUser />
+  },
+  {
+    path: "/FormUser",
+    element: <FormUser />
   }
 ])
 

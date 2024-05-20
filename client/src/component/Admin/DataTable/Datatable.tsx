@@ -1,10 +1,17 @@
 import MUIDataTable from "mui-datatables";
-import Navbar from "../Navbar/navbar";
+import Navbar from "../Navbar/NavAdmin";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import './DataTable.css'
 
 const title = <h1 className="">ฐานข้อมูล</h1>
+
+const row = [
+  {
+    name: 'data_id',
+    value: '1'
+  }
+]
 
 const columns = [
   { name: "data_id", label: "เลขที่" },
@@ -80,10 +87,16 @@ const columns = [
   },
   {
     name: "action",
-    label: "อัพเดต",
+    label: "จัดการ",
     options: {
       customBodyRender: (value) => (
-        <button className="btn btn-info btn-sm">อัพเดต</button>
+        <>
+        <button className="btn btn-sm btn-info"><i className="fa-solid fa-plus"></i></button>
+        &nbsp;
+        <button className="btn btn-sm btn-warning"><i className="fa-solid fa-pen-to-square"></i></button>
+        &nbsp;
+        <button className="btn btn-sm btn-error"><i className="fa-solid fa-trash"></i></button>
+        </>
       ),
     },
   },
@@ -120,7 +133,7 @@ export const DataTable = () => {
       <center>
         <MUIDataTable 
           title={title}
-          data={data}
+          data={row}
           columns={columns}
           options={options}
         />
